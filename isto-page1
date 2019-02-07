@@ -1,0 +1,9 @@
+Each pod in the mesh must be running in istio compatible SideCar.
+2 ways to inject side car in your POD:
+A- Manually : useing CLI tool called IstioCTL by issuing command
+B- Automatically using Istio SideCar injector
+
+A- the manual way will modify POD tempalte source code and put side car code inside it!, but adding/modify side car requier 
+update entir deployment/controller template!.
+B- the automatic way will inject sidecar at pod creation time, then after that you can update/modify the side car by deleting 
+the pod lol(stupid way) or by using rollout feature from kubernates!
