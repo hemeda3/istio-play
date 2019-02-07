@@ -60,3 +60,6 @@ One natural question that might come is: Where does that data come from? How doe
   :::: Automatic injection::::
    The other way of having istio-proxy injected into your pods is by telling Istio to automatically do that for you. In fact, this is enabled by default for all namespaces with the label istio-injection=enabled. This means that, if a namespace has such label, all pods within it will get the istio-proxy sidecar automatically. You don’t need to run istioctl or do anything with your yaml files!
  The way it works is quite simple: It makes use of a Kubernetes feature called MutatingWebhook which consists in Kubernetes notifying Istio whenever a new pod is about to be created, and giving Istio the chance to modify the pod spec on the fly, just before actually creating that pod. Thus, Istio injects the istio-proxy sidecar using the template found in that ConfigMap we saw above.
+
+
+https://www.datawire.io/envoyproxy/getting-started-lyft-envoy-microservices-resilience/
